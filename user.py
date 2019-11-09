@@ -23,17 +23,27 @@ class User:#class that generates instances of user
         '''
         User.user_list.remove(self)
     @classmethod
-    def find_by_email(cls,email):
+    def find_by_email(cls,email,password):
         '''
-        Method that takes in a email and returns a contact that matches that email.
+        Method that takes in a email and password and returns a contact that matches that email.
         Args:
             email: email  to search for
         Returns :
             Contact of person that matches the number
         '''
         for user in cls.user_list:
-            if user.email==email:
+            if user.email==email and user.password==password:
                 return user
+class Credential:# class that generates instances of credential object
+    credential_list=[]# empty credential list class varaible
+    def __init__(self,user_name,password,email):
+        self.user_name=user_name
+        self.password=password
+        self.email=email
+
+
+
+
 
     
 
