@@ -22,6 +22,20 @@ class User:#class that generates instances of user
         function to delete the user object from the user_list
         '''
         User.user_list.remove(self)
+    @classmethod
+    def find_by_email(cls,email):
+        '''
+        Method that takes in a email and returns a contact that matches that email.
+        Args:
+            email: email  to search for
+        Returns :
+            Contact of person that matches the number
+        '''
+        for user in cls.user_list:
+            if user.email==email:
+                return user
+
+    
 
 
 
