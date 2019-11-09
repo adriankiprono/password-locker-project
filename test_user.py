@@ -50,6 +50,18 @@ class TestUser(unittest.TestCase):
         test_user=User("king","kong","king@gmail.com","qweasdzxc","0712345678")# new user object
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
+    def test_delete_user(self):
+        '''
+        the test_del_user test case to check if we deleted the user object in the
+        user _list
+        '''
+        self.new_user.save_user()# saving the user object 
+        test_user=User("king","kong","king@gmail.com","qweasdzxc","0712345678")# new contact object
+        test_user.save_user()
+
+        self.new_user.delete_user()# deleting the user object
+        
+        self.assertEqual(len(User.user_list),1)
 
     
 

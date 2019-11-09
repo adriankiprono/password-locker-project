@@ -17,7 +17,11 @@ class User:#class that generates instances of user
         places it user_list
         '''
         User.user_list.append(self)
-    
+    def delete_user(self):
+        '''
+        function to delete the user object from the user_list
+        '''
+        User.user_list.remove(self)
 
 
 
