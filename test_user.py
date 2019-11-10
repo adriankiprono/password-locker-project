@@ -83,7 +83,36 @@ class TestCredential(unittest.TestCase):
         '''
         set up method to run before each test case
         '''
-        self.new_credential=Credential("kingkong","qweasdzxc","king@gmail.com")
+        self.new_credential=Credential("kingkong","qweasdzxc","facebook")
+    def test_init_credential(self):
+        '''
+        to test if the credential object is prpperly initilize
+        '''
+        self.assertEqual(self.new_credential.user_name,"kingkong")
+        self.assertEqual(self.new_credential.password,"qweasdzxc")
+        self.assertEqual(self.new_credential.account_name,"facebook")
+    def test_save_credential(self):
+        '''
+        function to test if we can save the credential in credential list
+        '''
+        self.new_credential.save_credential()# method that saves the credential object
+        self.assertEqual(len(Credential.credential_list),1)
+    def tearDown(self):
+        '''
+        setdown method if clear each test case after they have run
+        '''
+        Credential.credential=[]#empty 
+    def test_delete_credential(self):
+        '''
+        function for  test case to see if we can delete the 
+        credential object from credential list
+        '''
+        self.new_credential.save_credential()
+        test_credential=Credential("kingkong","qweasdzxc","facebook")
+        self.new_credential.delete_credential()# deleting the credential object from the list
+        self.assertEqual(len(Credential.credential_list),0)
+    
+
 
 
     

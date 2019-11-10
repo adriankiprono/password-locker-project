@@ -36,10 +36,28 @@ class User:#class that generates instances of user
                 return user
 class Credential:# class that generates instances of credential object
     credential_list=[]# empty credential list class varaible
-    def __init__(self,user_name,password,email):
+    def __init__(self,user_name,password,account_name):
         self.user_name=user_name
         self.password=password
-        self.email=email
+        self.account_name=account_name
+        '''
+        the init method defines the properties of our
+        objects
+        '''
+    def save_credential(self):
+        '''
+        function to save credential in the credential_list
+        '''
+        Credential.credential_list.append(self)
+    def delete_credential(self):
+        '''
+        function to delete the object from the list 
+        '''
+        Credential.credential_list.remove(self)
+    
+
+
+
 
 
 
