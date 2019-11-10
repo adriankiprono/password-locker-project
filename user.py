@@ -69,6 +69,16 @@ class Credential:# class that generates instances of credential object
         function to display all the credential from the credential_list
         '''
         return cls.credential_list
+    @classmethod
+    def copy_credential(cls):
+        '''
+        method that copy the credential by first finding the credential it 
+        needs to copy
+        '''
+        credential_found=cls.find_by_user_name(user_name)
+        pyperclip.copy(credential_found.password)
+        
+
         
 
 

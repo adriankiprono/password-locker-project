@@ -127,15 +127,20 @@ class TestCredential(unittest.TestCase):
         method that checks to see we can return a list of the credential
         '''
         self.assertEqual(Credential.display_credential(),Credential.credential_list)# method for check displaying function works
+    def test_copy_credential(self):
+        '''
+        function for test case to see if can copy a credential
+        '''
+        self.new_credential.save_credential()
+        test_credential=Credential("kingkong","qweasdzxc","facebook")# new object
+        test_credential.save_credential()# save theobject
+        find_credential=None
+        for credential in Credential.credential_list:
+            found_credential=Credential.find_by_user_name(credential.user_name)
+            return pyperclip.copy(found_credential.password)
+            Credential.copy_credential(self.new_credential.user_name) 
+            self.assertEqual("qweasdzxc",pyperclip.paste())
     
-    
-    
-
-
-
-    
-
-
 
 if __name__=='__main__':
     unittest.main()
