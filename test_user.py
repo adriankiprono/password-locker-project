@@ -1,6 +1,7 @@
 import unittest # getting the unittest module
 from user import User #import the user class
 from user import Credential #import the credential class
+import pyperclip
 
 class TestUser(unittest.TestCase):
     '''
@@ -126,6 +127,7 @@ class TestCredential(unittest.TestCase):
         method that checks to see we can return a list of the credential
         '''
         self.assertEqual(Credential.display_credential(),Credential.credential_list)# method for check displaying function works
+    
     
     
 

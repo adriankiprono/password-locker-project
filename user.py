@@ -1,3 +1,4 @@
+import pyperclip
 class User:#class that generates instances of user
 
     user_list=[]  # empty user list variable
