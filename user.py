@@ -62,6 +62,14 @@ class Credential:# class that generates instances of credential object
         for credential in cls.credential_list:
             if credential.user_name==user_name:
                 return credential
+    @classmethod
+    def display_credential(cls):
+        '''
+        function to display all the credential from the credential_list
+        '''
+        return cls.credential_list
+        
+
 
 
     

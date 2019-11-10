@@ -119,8 +119,13 @@ class TestCredential(unittest.TestCase):
         test_credential=Credential("kingkong","qweasdzxc","facebook")
         test_credential.save_credential()
 
-        find_credential=Credential.find_by_user_name("kingkong")
+        find_credential=Credential.find_by_user_name("kingkong")# finding the credential by its user_name
         self.assertEqual(find_credential.user_name,test_credential.user_name)
+    def test_display_credential(self):
+        '''
+        method that checks to see we can return a list of the credential
+        '''
+        self.assertEqual(Credential.display_credential(),Credential.credential_list)# method for check displaying function works
     
     
 
