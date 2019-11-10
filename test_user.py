@@ -101,7 +101,7 @@ class TestCredential(unittest.TestCase):
         '''
         setdown method if clear each test case after they have run
         '''
-        Credential.credential=[]#empty 
+        Credential.credential_list=[]#empty 
     def test_delete_credential(self):
         '''
         function for  test case to see if we can delete the 
@@ -111,6 +111,17 @@ class TestCredential(unittest.TestCase):
         test_credential=Credential("kingkong","qweasdzxc","facebook")
         self.new_credential.delete_credential()# deleting the credential object from the list
         self.assertEqual(len(Credential.credential_list),0)
+    def test_find_credential(self):
+        '''
+        function for test case to test if we can find the credential object from the list
+        '''
+        self.new_credential.save_credential()
+        test_credential=Credential("kingkong","qweasdzxc","facebook")
+        test_credential.save_credential()
+
+        find_credential=Credential.find_by_user_name("kingkong")
+        self.assertEqual(find_credential.user_name,test_credential.user_name)
+    
     
 
 

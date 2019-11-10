@@ -54,6 +54,16 @@ class Credential:# class that generates instances of credential object
         function to delete the object from the list 
         '''
         Credential.credential_list.remove(self)
+    @classmethod
+    def find_by_user_name(cls,user_name):
+        '''
+        function to find  the credential object
+        '''
+        for credential in cls.credential_list:
+            if credential.user_name==user_name:
+                return credential
+
+
     
 
 
