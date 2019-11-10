@@ -1,4 +1,7 @@
 import pyperclip
+import random
+import math
+import string
 class User:#class that generates instances of user
 
     user_list=[]  # empty user list variable

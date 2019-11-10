@@ -2,6 +2,9 @@ import unittest # getting the unittest module
 from user import User #import the user class
 from user import Credential #import the credential class
 import pyperclip
+import random
+import math
+import string
 
 class TestUser(unittest.TestCase):
     '''
@@ -140,6 +143,7 @@ class TestCredential(unittest.TestCase):
             return pyperclip.copy(found_credential.password)
             Credential.copy_credential(self.new_credential.user_name) 
             self.assertEqual("qweasdzxc",pyperclip.paste())
+    
     
 
 if __name__=='__main__':
