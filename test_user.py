@@ -145,6 +145,7 @@ class TestCredential(unittest.TestCase):
             self.assertEqual("qweasdzxc",pyperclip.paste())
     
     
+    
 
 if __name__=='__main__':
     unittest.main()
