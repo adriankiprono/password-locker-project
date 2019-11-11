@@ -133,7 +133,7 @@ def main():
             print(f"Sorry we could not find your account. try again")
             print("\n")
     while True:
-        print("Use these short codes:\n cc - Create a new credential \n dc - Display Credentials \n fc - Find a credential \n  \n de - Delete credential \n EX -  to Exit  \n")
+        print("Use these short codes:\n cc - Create a new credential \n dc - Display Credentials \n fc - Find a credential \n  \n de - Delete credential \n ex -  to Exit  \n")
         short_code = input()
         if short_code=='cc':
             print("account_name")
@@ -189,12 +189,11 @@ def main():
                 print(f"the saved credential {existing_credential.user_name} is deleted")
             else:
                 print("the credential you looking to delete is not there")
-        
-
-
-
-            
-
+        elif short_code=='ex':
+            print("Bye .......")
+            break
+    else:
+        print("I really didn't get that. Please use the short codes")
 
 if __name__ == '__main__':
     main()
