@@ -55,6 +55,11 @@ class TestUser(unittest.TestCase):
         test_user=User("king","kong","king@gmail.com","qweasdzxc","0712345678")# new user object
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
+    def test_display_user(self):
+        '''
+        method that checks to see we can return a list of the user
+        '''
+        self.assertEqual(User.display_user(),User.user_list)# method for check displaying function works
     def test_delete_user(self):
         '''
         the test_del_user test case to check if we deleted the user object in the
@@ -143,6 +148,7 @@ class TestCredential(unittest.TestCase):
             return pyperclip.copy(found_credential.password)
             Credential.copy_credential(self.new_credential.user_name) 
             self.assertEqual("qweasdzxc",pyperclip.paste())
+    def
     
     
     

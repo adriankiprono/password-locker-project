@@ -21,6 +21,12 @@ class User:#class that generates instances of user
         places it user_list
         '''
         User.user_list.append(self)
+    @classmethod
+    def display_user(cls):
+        '''
+        function to display all the credential from the credential_list
+        '''
+        return cls.user_list
     def delete_user(self):
         '''
         function to delete the user object from the user_list
@@ -80,14 +86,12 @@ class Credential:# class that generates instances of credential object
         '''
         credential_found=cls.find_by_user_name(user_name)
         pyperclip.copy(credential_found.password)
-    @classmethod
-    def random_password(cls,stringlenght=10):
+    def random_password(pass_len):
         '''
-        the method generates random password from letters and digits 
-        '''
-        password_character=''.join([random.character(string.ascii_letters+string.digits) for l in range(stringlenght) ])
-        return password_character
-        
+    generates a random password for the user.
+    '''
+    return "".join(random.choice(string.ascii_letters + string.digits) for i in range(pass_len)
+    
         
 
         
