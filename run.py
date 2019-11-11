@@ -133,7 +133,7 @@ def main():
             print(f"Sorry we could not find your account. try again")
             print("\n")
     while True:
-        print("Use these short codes:\n cc - Create a new credential \n dc - Display Credentials \n fc - Find a credential \n scp - Generate A  secure randomn password \n de - Delete credential \n EX -  to Exit  \n")
+        print("Use these short codes:\n cc - Create a new credential \n dc - Display Credentials \n fc - Find a credential \n  \n de - Delete credential \n EX -  to Exit  \n")
         short_code = input()
         if short_code=='cc':
             print("account_name")
@@ -176,7 +176,24 @@ def main():
                 print(f"username  {existing_credential.user_name}")
                 print('>'*55)
                 print(f"account >{existing_credential.account_name} \n Password > {existing_credential.password}")
+            else :
+                print("we could not find your credential)")
+        elif short_code=='de':
+            print("enter user_name of credential you want to delete")
+            delete_user_name=input()
+            if find_credential(user_name):
+                existing_credential=find_credential(user_name)
+                print('\n')
+                existing_credential.display_credential()
+                print("\n")
+                print(f"the saved credential {existing_credential.user_name} is deleted")
+            else:
+                print("the credential you looking to delete is not there")
         
+
+
+
+            
 
 
 if __name__ == '__main__':
