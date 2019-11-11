@@ -141,7 +141,7 @@ class TestCredential(unittest.TestCase):
         '''
         self.new_credential.save_credential()
         test_credential=Credential("kingkong","qweasdzxc","facebook")# new object
-        test_credential.save_credential()# save theobject
+        test_credential.save_credential()# save the object
         find_credential=None
         for credential in Credential.credential_list:
             found_credential=Credential.find_by_user_name(credential.user_name)
