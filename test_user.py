@@ -148,7 +148,7 @@ class TestCredential(unittest.TestCase):
             return pyperclip.copy(found_credential.password)
             Credential.copy_credential(self.new_credential.user_name) 
             self.assertEqual("qweasdzxc",pyperclip.paste())
-    def
+    
     
     
     

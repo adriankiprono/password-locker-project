@@ -86,30 +86,9 @@ class Credential:# class that generates instances of credential object
         '''
         credential_found=cls.find_by_user_name(user_name)
         pyperclip.copy(credential_found.password)
-    def random_password(pass_len):
-        '''
-    generates a random password for the user.
-    '''
-    return "".join(random.choice(string.ascii_letters + string.digits) for i in range(pass_len)
-    
-        
-
-        
-
-
-
-    
-
-
-
-
-
-
-
-
-    
-
-
-
-
+    # def random_password(pass_len):
+    #     '''
+    #     generates a random password for the user.
+    #     '''
+    #     return "".join(random.choice(string.ascii_letters + string.digits) for i in range(pass_len)
 

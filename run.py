@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.8
+#! /usr/bin/env python3.8
 
 from user import User #import the user class
 from user import Credential #import the credential class
@@ -37,7 +37,7 @@ def create_credential(user_name,password,account_name):
     '''
     new_credential=Credential(user_name,password,account_name)
     return new_credential
-def save_credential(user_name,password,account_name):
+def save_credential(credential):
     '''
     function to save credential
     '''
@@ -118,6 +118,53 @@ def main():
         print("*"*85)
         print(f"Hello {first_name},{last_name},{email} Your account has been created succesfully! Your password is: {password}")
         print("*"*85)
+    elif short_code == "2":
+        print("*"*50)
+        print("Enter your first_name and your Password to log in:")
+        print('*' * 50)
+        first_name = input("first_name: ")
+        password = input("password: ")
+        login = login_user(first_name,password)
+        if login_user == login:
+            print(f"Hello {first_name}.Welcome To your  user  account")  
+            print('\n')
+        
+        else:
+            print(f"Sorry we could not find your account. try again")
+            print("\n")
+    while True:
+        print("Use these short codes:\n cc - Create a new credential \n dc - Display Credentials \n fc - Find a credential \n scp - Generate A  secure randomn password \n de - Delete credential \n EX -  to Exit  \n")
+        short_code = input()
+        if short_code=='cc':
+            print("account_name")
+            account_name=input()
+            print("\n")
+            print("user_name")
+            user_name=input()
+            print("\n")
+            print("password")
+            while True:
+    
+                print("do you want to a scp -secured password  \n ucp -do you want to create your own")
+                password_option=input().lower().strip()
+                if password_option=='ucp':
+                    password = input("enter your password")
+                    break
+                elif password_option =='scp':
+                    print("how long do you want you password to be ?")
+                    pass_len = int(input())
+                    password=random_password(pass_len)
+                    break
+            else:
+                print("invalid choice please select from the option")
+        save_credential(create_credential(user_name,password,account_name))
+        print(f"Hi! there . here is your credential {account_name}{user_name}{password}")
+            
+    
+    
+
+
+
 
 
 
