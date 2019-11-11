@@ -157,19 +157,26 @@ def main():
                     break
             else:
                 print("invalid choice please select from the option")
-        save_credential(create_credential(user_name,password,account_name))
-        print(f"Hi! there . here is your credential {account_name}{user_name}{password}")
-        elif short_code=='dc':
+            save_credential(create_credential(user_name,password,account_name))
+            print(f"Hi! there . here is your credential {account_name}  {user_name}  {password}")
+
+        elif short_code =='dc':
             if display_credential():
                 print("here is a list of all accounts")
-
-
-            
-    
-    
-
-
-
+                print("."*80)
+                for credential in display_credential():
+                    print(f"the list accounts \n account(s){account_name}  Password is {password}")
+            else:
+                print("Sorry it seems that you don't have any credential")
+        elif short_code=='fc':
+            print("enter the username you are looking")
+            look_account=input()
+            if find_credential(user_name):
+                existing_credential=find_credential(user_name)
+                print(f"username  {existing_credential.user_name}")
+                print('>'*55)
+                print(f"account >{existing_credential.account_name} \n Password > {existing_credential.password}")
+        
 
 
 if __name__ == '__main__':
