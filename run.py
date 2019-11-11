@@ -29,10 +29,21 @@ def create_credential(user_name,password,account_name):
     '''
     new_credential=Credential(user_name,password,account_name)
     return new_credential
-def save_credential(credential):
+def save_credential(user_name,password,account_name):
     '''
     function to save credential
     '''
     credential.save_credential()
+def delete_credential(credential):
+    '''
+    function to delete credential
+    '''
+    credential.delete_credential()
+def find_credential(user_name):
+    '''
+    function to find credential
+    '''
+    return Credential.find_by _user_name(user_name)
+def 
 
 
