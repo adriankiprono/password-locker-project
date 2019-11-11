@@ -44,6 +44,11 @@ def find_credential(user_name):
     function to find credential
     '''
     return Credential.find_by _user_name(user_name)
-def 
+def display_credential():
+    '''
+    function to display all credential
+    '''
+    return Credential.display_credential
+
 
 
